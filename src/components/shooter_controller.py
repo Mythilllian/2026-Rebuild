@@ -41,8 +41,8 @@ class ShooterController(StateMachine):
         chassis_speeds = self.swerve_drive.get_velocity()
         vx = chassis_speeds.vx
         vy = chassis_speeds.vy
-        lead_x = vx / projectile_speed
-        lead_y = vy / projectile_speed
+        lead_x = vx / self.projectile_speed
+        lead_y = vy / self.projectile_speed
 
         self.target_angle += math.atan2(lead_y, lead_x)
         
